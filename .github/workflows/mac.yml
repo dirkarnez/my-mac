@@ -7,16 +7,22 @@ defaults:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-13 # macos-latest
     steps:
+    # - run: |
+    #     echo $PATH && \
+    #     cd /usr/local/bin && \
+    #     sudo curl https://github.com/dirkarnez/transfersh/releases/download/v1.0.0/transfersh-v1.0.0-macos-latest.zip -L -O -J && \
+    #     sudo unzip transfersh-v1.0.0-macos-latest.zip && \
+    #     sudo ls -R
+
     - run: |
-        echo $PATH && \
         cd /usr/local/bin && \
-        sudo curl https://github.com/dirkarnez/transfersh/releases/download/v1.0.0/transfersh-v1.0.0-macos-latest.zip -L -O -J && \
-        sudo unzip transfersh-v1.0.0-macos-latest.zip && \
+        sudo curl https://github.com/timvisee/ffsend/releases/download/v0.2.76/ffsend-v0.2.76-macos -L --output ffsend && \
+        sudo chmod +x /usr/local/bin/ffsend  && \
         sudo ls -R
         
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - uses: fastai/workflows/ssh@master
       with:
