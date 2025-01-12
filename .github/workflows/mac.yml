@@ -22,7 +22,9 @@ jobs:
         sudo chmod +x /usr/local/bin/ffsend  && \
         sudo ls -R
         
-    - uses: actions/checkout@v4
+    # - uses: actions/checkout@v4
+
+    - run: sudo chmod -R +x ./
     
     - uses: fastai/workflows/ssh@master
       with:
