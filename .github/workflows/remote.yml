@@ -22,7 +22,7 @@ jobs:
           vnc_password: vncvncvnc
 
       - run: |
-          curl https://tunnelsassetsprod.blob.core.windows.net/cli/osx-x64-devtunnel -L -J --output devtunnel
+          curl https://aka.ms/TunnelsCliDownload/osx-x64 -L -J --output devtunnel
 
       - run: |
           sudo chmod -R +x . && \
