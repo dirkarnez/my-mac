@@ -16,6 +16,11 @@ jobs:
       #     tags: tag:actions
       #     use-cache: 'true'
       #     args: --ssh
+
+      - shell: bash
+        run: |
+          sudo /System/Library/CoreServices/RemoteManagement/AppleVNCServer.bundle/Contents/MacOS/AppleVNCServer
+          
       - name: Enable RDP
         uses: gbraad-actions/enable-mac-remote@main
         with:
